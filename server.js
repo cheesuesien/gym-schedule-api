@@ -106,4 +106,4 @@ app.put('/adduser', (req, res) => {
     .catch(err => res.status(400).json('unable to register new user'))
 })
 
-app.listen(3001, () => console.log('Example app listening on port 3001!'))
+app.listen(process.env.PORT || 3001, () => console.log(`Example app listening on port ${process.env.PORT}``))
