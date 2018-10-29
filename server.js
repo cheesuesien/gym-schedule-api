@@ -17,7 +17,7 @@ const db = knex({
 
 app.use(cors());
 app.use(bodyParser.json());
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => {res.send('Hello World!')} )
 
 app.post('/signin', (req, res) => {
   const { email, password } = req.body;
