@@ -8,10 +8,8 @@ const app = express();
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'makisa123',
-    database : 'postgres'
+    connectionString : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
@@ -55,7 +53,7 @@ app.put('/bookslot', (req, res) => {
 
 app.delete('/bookslot', (req, res) => {
   const {date, slot, username} = req.body;
-  db('slot')
+  db('slots')
   .where({
     date: date,
     slot: slot,
