@@ -45,7 +45,7 @@ app.post('/signin', (req, res) => {
 app.put('/bookslot', (req, res) => {
   const {date, slot, username} = req.body;
 
-  db('slot').insert({date: date, slot: slot, username: username})
+  db('slots').insert({date: date, slot: slot, username: username})
   .then(() => {return res.json("insert successful")})
   .catch(err => res.json("insert failed"))
 })
